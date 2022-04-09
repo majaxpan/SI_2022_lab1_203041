@@ -1,0 +1,154 @@
+4.
+$ git clone https://github.com/majaxpan/SI_2022_lab1_203041 -клонирање
+$ cd SI_2022_lab1_203041 -влегување во репозиториум
+
+5.
+$ git add shopping_list.txt
+$ git commit shopping_list.txt -m 'Add 5 items to the shopping list'
+
+6.
+$ git commit -a -m 'Add quantities to the items.'
+
+7.
+$ git branch branch1-креирање гранка branch1
+$git branch branch2-креирање гранка branch2
+
+8.
+$ git log
+commit 4bc1bbbc3c19d0df148c5ca6f1d9973d6c863520 (HEAD -> master, branch2, branch1)
+Author: Maja Panoska <panoskamaja@live.com>
+Date:   Sat Apr 9 11:15:30 2022 +0200
+
+    Add quantities to the items.
+
+commit 38f7f018fe921abc4ec6ad4aa88f5ff57281597f
+Author: Maja Panoska <panoskamaja@live.com>
+Date:   Sat Apr 9 11:12:59 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit e9f5b4d7aa2cc0b635e7fabe9c237cc1a15878ca (origin/master, origin/HEAD)
+Author: majaxpan <100315315+majaxpan@users.noreply.github.com>
+Date:   Sat Apr 9 11:08:44 2022 +0200
+
+    Added name and index
+
+commit 408f65966ebf4a5311bcacf3820ce5dbae837b08
+Author: majaxpan <100315315+majaxpan@users.noreply.github.com>
+Date:   Sat Apr 9 11:08:08 2022 +0200
+
+9.
+На master: $git push
+$ git checkout branch1 -се префрла на branch1
+$ git push origin branch1 -се синхронизир со оддалечениот репозиториум
+$ git checkout branch2 - се префрла на branch2
+$ git push origin branch2 - се синхронизира со оддалечениот репозиториум
+
+10.
+$ git checkout branch1
+
+11.
+$ git commit -a -m 'Change quantity of item #5'
+
+12.
+$ git checkout master
+
+13.
+$ git commit -a -m 'Change quantity of item #2'
+
+14.
+На master: $ git push 
+$ git checkout branch1 -се префрла на branch1
+$ git push --set-upstream origin branch1 -синхронизира со оддалечениот репозиториум
+$ git checkout branch2 -се префрла на branch2
+$ git push --set-upstream origin branch2 -синхронизира со оддалечениот репозиториум
+
+15.
+$ git checkout branch2
+
+16.
+$ git commit shopping_list.txt -m 'Modify item 4'
+
+17.
+$ git log
+commit 0460e3b7b80d3641f3e88156b20e1b2465c2d12f (HEAD -> branch2)
+Author: Maja Panoska <panoskamaja@live.com>
+Date:   Sat Apr 9 18:31:49 2022 +0200
+
+    Modify item 4
+
+commit 4bc1bbbc3c19d0df148c5ca6f1d9973d6c863520 (origin/branch2)
+Author: Maja Panoska <panoskamaja@live.com>
+Date:   Sat Apr 9 11:15:30 2022 +0200
+
+    Add quantities to the items.
+
+commit 38f7f018fe921abc4ec6ad4aa88f5ff57281597f
+Author: Maja Panoska <panoskamaja@live.com>
+Date:   Sat Apr 9 11:12:59 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit e9f5b4d7aa2cc0b635e7fabe9c237cc1a15878ca
+Author: majaxpan <100315315+majaxpan@users.noreply.github.com>
+Date:   Sat Apr 9 11:08:44 2022 +0200
+
+    Added name and index
+
+18.
+$ git commit --amend -m 'Modify item #4 and add item #6'
+
+19.
+$ git log
+commit 19293152abcf2879c55bdd8e932f63ecf451ad81 (HEAD -> branch2)
+Author: Maja Panoska <panoskamaja@live.com>
+Date:   Sat Apr 9 18:31:49 2022 +0200
+
+    Modify item #4 and add item #6
+
+commit 4bc1bbbc3c19d0df148c5ca6f1d9973d6c863520 (origin/branch2)
+Author: Maja Panoska <panoskamaja@live.com>
+Date:   Sat Apr 9 11:15:30 2022 +0200
+
+    Add quantities to the items.
+
+commit 38f7f018fe921abc4ec6ad4aa88f5ff57281597f
+Author: Maja Panoska <panoskamaja@live.com>
+Date:   Sat Apr 9 11:12:59 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit e9f5b4d7aa2cc0b635e7fabe9c237cc1a15878ca
+Author: majaxpan <100315315+majaxpan@users.noreply.github.com>
+Date:   Sat Apr 9 11:08:44 2022 +0200
+
+    Added name and index
+
+20.
+$ git checkout master
+$ git merge branch1
+-споено со рекурзивна стратегија
+
+21.
+$ git fetch origin master
+$ git checkout branch2
+$ git rebase origin/master
+$ git checkout master
+$ git merge branch2
+$ git merge --abort
+$ git checkout branch2
+$ git fetch origin branch2
+$ git checkout master
+$ git rebase origin/branch2
+-тука се јави конфликт, па го едитирав фајлот за да го разрешам конфликтот
+$ git add shopping_list.txt
+$ git commit -a -m 'Solve conflict'
+$ git rebase --continue
+$ git push
+-fast forward стратегија
+
+22.
+git add 203041.txt
+git commit 203041.txt -m 'Add docs'
+
+
